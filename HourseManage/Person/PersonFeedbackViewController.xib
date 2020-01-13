@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="PersonFeedbackViewController">
+            <connections>
+                <outlet property="phoneNumber" destination="vCF-r8-0px" id="M2y-sW-V9m"/>
+                <outlet property="textView" destination="wMu-Xj-c8y" id="aiI-0q-49e"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="请输入您要反馈的信息，您的反馈可以帮助我们做的更好！" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="wMu-Xj-c8y">
+                    <rect key="frame" x="30" y="64" width="354" height="200"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="200" id="cGg-g3-ucX"/>
+                    </constraints>
+                    <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ers-wB-weY">
+                    <rect key="frame" x="30" y="284" width="354" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="手机号：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ajv-a0-yxF">
+                            <rect key="frame" x="14" y="21" width="61.5" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入手机号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vCF-r8-0px">
+                            <rect key="frame" x="83.5" y="21" width="92" height="18"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="1bc-X8-7HC"/>
+                        <constraint firstItem="Ajv-a0-yxF" firstAttribute="leading" secondItem="ers-wB-weY" secondAttribute="leading" constant="14" id="Joy-N0-ToW"/>
+                        <constraint firstItem="vCF-r8-0px" firstAttribute="centerY" secondItem="ers-wB-weY" secondAttribute="centerY" id="Sz5-8e-8lJ"/>
+                        <constraint firstItem="vCF-r8-0px" firstAttribute="trailing" secondItem="Ajv-a0-yxF" secondAttribute="trailing" constant="100" id="eMp-2R-glt"/>
+                        <constraint firstItem="Ajv-a0-yxF" firstAttribute="centerY" secondItem="ers-wB-weY" secondAttribute="centerY" id="hbO-60-xL6"/>
+                    </constraints>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1b8-dG-ouu">
+                    <rect key="frame" x="50" y="802" width="314" height="40"/>
+                    <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="40" id="2OW-fl-FvB"/>
+                    </constraints>
+                    <state key="normal" title="确认提交">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </state>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="20"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                    <connections>
+                        <action selector="butAction:" destination="-1" eventType="touchUpInside" id="I57-p7-m4d"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="ers-wB-weY" secondAttribute="trailing" constant="30" id="3HM-7m-hcB"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="1b8-dG-ouu" secondAttribute="trailing" constant="50" id="A3z-Gj-8wJ"/>
+                <constraint firstItem="wMu-Xj-c8y" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="LC9-1l-NPV"/>
+                <constraint firstItem="ers-wB-weY" firstAttribute="top" secondItem="wMu-Xj-c8y" secondAttribute="bottom" constant="20" id="Xdb-Rb-WjY"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="1b8-dG-ouu" secondAttribute="bottom" constant="20" id="YcO-io-X0W"/>
+                <constraint firstItem="ers-wB-weY" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="30" id="dlS-jU-gdL"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="wMu-Xj-c8y" secondAttribute="trailing" constant="30" id="msg-rF-xER"/>
+                <constraint firstItem="1b8-dG-ouu" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="nXo-Gw-qcK"/>
+                <constraint firstItem="wMu-Xj-c8y" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" constant="20" id="oIe-py-Ehh"/>
+                <constraint firstItem="1b8-dG-ouu" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" constant="50" id="ymX-v2-2zx"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="151"/>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="YuYueViewController">
+            <connections>
+                <outlet property="fiveField" destination="Gah-bi-s9a" id="KCP-JP-6sP"/>
+                <outlet property="fourField" destination="rge-kX-bPe" id="LIk-GY-6hR"/>
+                <outlet property="ontTextField" destination="LFp-d9-gZ1" id="Gfn-Ey-DYt"/>
+                <outlet property="sixField" destination="BBg-In-7Vt" id="CfG-Gu-tGo"/>
+                <outlet property="threeField" destination="1Z1-98-mk0" id="0Yj-k0-eBB"/>
+                <outlet property="twoField" destination="YNf-fu-qxq" id="su9-B7-qeY"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sxQ-g6-aV1">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="z3N-HP-yuV">
+                            <rect key="frame" x="10" y="17" width="394" height="275"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J7A-Rt-wy4">
+                                    <rect key="frame" x="0.0" y="0.0" width="394" height="16"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="司机名称" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6tG-hT-ucv">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入司机名称" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="LFp-d9-gZ1">
+                                            <rect key="frame" x="197" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="6tG-hT-ucv" firstAttribute="width" secondItem="J7A-Rt-wy4" secondAttribute="width" multiplier="1/2" id="0nj-C5-BIk"/>
+                                        <constraint firstItem="LFp-d9-gZ1" firstAttribute="width" secondItem="J7A-Rt-wy4" secondAttribute="width" multiplier="0.5" id="eMa-3l-Ugf"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="34q-Dc-0l9">
+                                    <rect key="frame" x="0.0" y="47" width="394" height="16"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="车牌号" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JPF-aF-BQW">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入车牌号" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YNf-fu-qxq">
+                                            <rect key="frame" x="197" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="YNf-fu-qxq" firstAttribute="width" secondItem="34q-Dc-0l9" secondAttribute="width" multiplier="0.5" id="SwU-59-4vk"/>
+                                        <constraint firstItem="JPF-aF-BQW" firstAttribute="width" secondItem="34q-Dc-0l9" secondAttribute="width" multiplier="1/2" id="h1Y-25-OEH"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E23-8J-fCI">
+                                    <rect key="frame" x="0.0" y="94" width="394" height="16"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="司机电话" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ds-Nv-OD9">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入司机电话" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Z1-98-mk0">
+                                            <rect key="frame" x="197" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="1Z1-98-mk0" firstAttribute="width" secondItem="E23-8J-fCI" secondAttribute="width" multiplier="0.5" id="gS8-MP-eqI"/>
+                                        <constraint firstItem="8ds-Nv-OD9" firstAttribute="width" secondItem="E23-8J-fCI" secondAttribute="width" multiplier="1/2" id="zZQ-Kb-BYb"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bab-TM-Pra">
+                                    <rect key="frame" x="0.0" y="141" width="394" height="16"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="核载量" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ngd-Kv-VEc">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="请输入核载量" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rge-kX-bPe">
+                                            <rect key="frame" x="197" y="0.0" width="197" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                        </textField>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="rge-kX-bPe" firstAttribute="width" secondItem="bab-TM-Pra" secondAttribute="width" multiplier="0.5" id="saJ-0C-ND3"/>
+                                        <constraint firstItem="ngd-Kv-VEc" firstAttribute="width" secondItem="bab-TM-Pra" secondAttribute="width" multiplier="1/2" id="wfX-Ix-Tt8"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSU-9y-Z8C">
+                                    <rect key="frame" x="0.0" y="188" width="394" height="28"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约入场时间开始" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XiL-Kn-yLu">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gah-bi-s9a">
+                                            <rect key="frame" x="197" y="0.0" width="197" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="请选择时间">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="fiveAction:" destination="-1" eventType="touchUpInside" id="L8d-bm-rsV"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="XiL-Kn-yLu" firstAttribute="width" secondItem="JSU-9y-Z8C" secondAttribute="width" multiplier="1/2" id="cHN-ST-A86"/>
+                                    </constraints>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Lym-Ux-cH4">
+                                    <rect key="frame" x="0.0" y="247" width="394" height="28"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="预约出场时间结束" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eqg-4U-POe">
+                                            <rect key="frame" x="0.0" y="0.0" width="197" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BBg-In-7Vt">
+                                            <rect key="frame" x="197" y="0.0" width="197" height="28"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <state key="normal" title="请选择时间">
+                                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="sixButtonAction:" destination="-1" eventType="touchUpInside" id="zZO-nv-K0I"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="eqg-4U-POe" firstAttribute="width" secondItem="Lym-Ux-cH4" secondAttribute="width" multiplier="1/2" id="6cY-tk-WRb"/>
+                                    </constraints>
+                                </stackView>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Lym-Ux-cH4" firstAttribute="width" secondItem="z3N-HP-yuV" secondAttribute="width" id="Lk0-aE-nHI"/>
+                                <constraint firstItem="JSU-9y-Z8C" firstAttribute="width" secondItem="z3N-HP-yuV" secondAttribute="width" id="WI6-qy-bK8"/>
+                                <constraint firstItem="34q-Dc-0l9" firstAttribute="width" secondItem="z3N-HP-yuV" secondAttribute="width" id="ZSd-nk-aHQ"/>
+                                <constraint firstItem="E23-8J-fCI" firstAttribute="width" secondItem="z3N-HP-yuV" secondAttribute="width" id="aoo-at-Xhy"/>
+                                <constraint firstItem="bab-TM-Pra" firstAttribute="width" secondItem="z3N-HP-yuV" secondAttribute="width" id="cDY-EK-SNz"/>
+                                <constraint firstItem="J7A-Rt-wy4" firstAttribute="width" secondItem="z3N-HP-yuV" secondAttribute="width" id="vyI-uu-15O"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NYp-dp-4R9">
+                            <rect key="frame" x="50" y="770" width="314" height="40"/>
+                            <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="adC-Ir-Hfl"/>
+                            </constraints>
+                            <state key="normal" title="保存">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="20"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="doneButtonAction:" destination="-1" eventType="touchUpInside" id="3by-Vr-0pt"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="bottom" secondItem="NYp-dp-4R9" secondAttribute="bottom" constant="8" id="2lZ-I9-0rf"/>
+                        <constraint firstItem="z3N-HP-yuV" firstAttribute="top" secondItem="sxQ-g6-aV1" secondAttribute="top" constant="17" id="J0I-Tz-oGn"/>
+                        <constraint firstItem="NYp-dp-4R9" firstAttribute="width" secondItem="sxQ-g6-aV1" secondAttribute="width" constant="-100" id="MbI-Nb-onK"/>
+                        <constraint firstItem="z3N-HP-yuV" firstAttribute="centerX" secondItem="sxQ-g6-aV1" secondAttribute="centerX" id="MsV-Xu-Yi2"/>
+                        <constraint firstItem="z3N-HP-yuV" firstAttribute="width" secondItem="sxQ-g6-aV1" secondAttribute="width" constant="-20" id="a2t-uY-UV6"/>
+                        <constraint firstItem="NYp-dp-4R9" firstAttribute="centerX" secondItem="sxQ-g6-aV1" secondAttribute="centerX" id="f56-Kc-OaJ"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="sxQ-g6-aV1" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="CBg-8g-Cqx"/>
+                <constraint firstItem="sxQ-g6-aV1" firstAttribute="height" secondItem="Q5M-cg-NOt" secondAttribute="height" id="Dv4-oc-3t7"/>
+                <constraint firstItem="sxQ-g6-aV1" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="a22-FB-CLc"/>
+                <constraint firstItem="sxQ-g6-aV1" firstAttribute="width" secondItem="Q5M-cg-NOt" secondAttribute="width" id="jLP-gS-v64"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+</document>

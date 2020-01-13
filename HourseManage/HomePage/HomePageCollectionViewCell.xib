@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="HomePageCollectionViewCell">
+            <rect key="frame" x="0.0" y="0.0" width="275" height="210"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="275" height="210"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="raW-Td-pYq">
+                        <rect key="frame" x="15" y="49" width="245" height="131"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="15"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="UICollectionView的item" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dtb-OU-Eq3">
+                        <rect key="frame" x="0.0" y="191" width="275" height="16"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="SEy-5g-ep8" firstAttribute="bottom" secondItem="raW-Td-pYq" secondAttribute="bottom" constant="30" id="33Y-wE-KlJ"/>
+                <constraint firstItem="Dtb-OU-Eq3" firstAttribute="leading" secondItem="SEy-5g-ep8" secondAttribute="leading" id="GzX-0d-vbX"/>
+                <constraint firstItem="raW-Td-pYq" firstAttribute="trailing" secondItem="SEy-5g-ep8" secondAttribute="trailing" constant="-15" id="KlB-Y3-spJ"/>
+                <constraint firstItem="SEy-5g-ep8" firstAttribute="bottom" secondItem="Dtb-OU-Eq3" secondAttribute="bottom" constant="3" id="TxU-w7-JPW"/>
+                <constraint firstItem="SEy-5g-ep8" firstAttribute="leading" secondItem="raW-Td-pYq" secondAttribute="leading" constant="-15" id="UHN-7t-EVy"/>
+                <constraint firstItem="SEy-5g-ep8" firstAttribute="trailing" secondItem="Dtb-OU-Eq3" secondAttribute="trailing" id="XvE-3G-eHQ"/>
+                <constraint firstItem="SEy-5g-ep8" firstAttribute="top" secondItem="raW-Td-pYq" secondAttribute="top" constant="-5" id="baH-vp-bor"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="SEy-5g-ep8"/>
+            <size key="customSize" width="275" height="210"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="8"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="iamge" destination="raW-Td-pYq" id="pkI-X2-5Z0"/>
+                <outlet property="label" destination="Dtb-OU-Eq3" id="tef-DS-Af2"/>
+            </connections>
+            <point key="canvasLocation" x="300.72463768115944" y="188.16964285714286"/>
+        </collectionViewCell>
+    </objects>
+</document>

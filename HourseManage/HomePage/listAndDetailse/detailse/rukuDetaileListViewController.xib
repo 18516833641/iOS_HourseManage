@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="rukuDetaileListViewController">
+            <connections>
+                <outlet property="bohuiButton" destination="Mlr-MS-b5t" id="pqd-o1-iKq"/>
+                <outlet property="buttonView" destination="Yzd-MU-8uL" id="WmW-4t-xny"/>
+                <outlet property="nodataImage" destination="MSy-fP-doe" id="gGT-gR-cbA"/>
+                <outlet property="tableView" destination="0If-KQ-LEI" id="Ete-UQ-Nly"/>
+                <outlet property="tongguoButton" destination="8D8-yx-162" id="PMa-AJ-NS2"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0If-KQ-LEI">
+                    <rect key="frame" x="0.0" y="44" width="414" height="718"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="1jO-IR-xo0"/>
+                        <outlet property="delegate" destination="-1" id="hYy-7O-zY3"/>
+                    </connections>
+                </tableView>
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Yzd-MU-8uL">
+                    <rect key="frame" x="0.0" y="762" width="414" height="100"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Mpo-hK-k6l">
+                            <rect key="frame" x="60" y="0.0" width="294" height="100"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8D8-yx-162">
+                                    <rect key="frame" x="0.0" y="0.0" width="294" height="40"/>
+                                    <color key="backgroundColor" red="0.1764705882" green="0.4549019608" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="g0S-Qh-V9P"/>
+                                    </constraints>
+                                    <state key="normal" title="通过">
+                                        <color key="titleColor" red="0.93333333330000001" green="0.96078431369999995" blue="0.97647058819999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="tongguoAction:" destination="-1" eventType="touchUpInside" id="1n0-2H-xTd"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mlr-MS-b5t">
+                                    <rect key="frame" x="0.0" y="60" width="294" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="ybe-hK-WXc"/>
+                                    </constraints>
+                                    <state key="normal" title="驳回">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <userDefinedRuntimeAttributes>
+                                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                            <real key="value" value="20"/>
+                                        </userDefinedRuntimeAttribute>
+                                    </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="bohuiAction:" destination="-1" eventType="touchUpInside" id="El1-fo-La9"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                    <constraints>
+                        <constraint firstItem="8D8-yx-162" firstAttribute="width" secondItem="Yzd-MU-8uL" secondAttribute="width" constant="-120" id="0R7-xZ-0uK"/>
+                        <constraint firstItem="Mpo-hK-k6l" firstAttribute="centerX" secondItem="Yzd-MU-8uL" secondAttribute="centerX" id="51X-Ub-bfx"/>
+                        <constraint firstItem="Mpo-hK-k6l" firstAttribute="centerY" secondItem="Yzd-MU-8uL" secondAttribute="centerY" id="QiO-uE-c9N"/>
+                        <constraint firstItem="Mlr-MS-b5t" firstAttribute="width" secondItem="Yzd-MU-8uL" secondAttribute="width" constant="-120" id="dHQ-ft-5qa"/>
+                    </constraints>
+                </view>
+                <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="zwsj" translatesAutoresizingMaskIntoConstraints="NO" id="MSy-fP-doe">
+                    <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="0If-KQ-LEI" firstAttribute="height" secondItem="Q5M-cg-NOt" secondAttribute="height" constant="-100" id="5xy-dv-7FT"/>
+                <constraint firstItem="Yzd-MU-8uL" firstAttribute="top" secondItem="0If-KQ-LEI" secondAttribute="bottom" id="6OA-21-21K"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="bottom" secondItem="Yzd-MU-8uL" secondAttribute="bottom" id="6fj-Zf-esy"/>
+                <constraint firstItem="Yzd-MU-8uL" firstAttribute="width" secondItem="Q5M-cg-NOt" secondAttribute="width" id="LL6-ty-m0Y"/>
+                <constraint firstItem="0If-KQ-LEI" firstAttribute="top" secondItem="Q5M-cg-NOt" secondAttribute="top" id="MMa-hn-vd1"/>
+                <constraint firstItem="MSy-fP-doe" firstAttribute="centerX" secondItem="Q5M-cg-NOt" secondAttribute="centerX" id="UGp-Un-6ah"/>
+                <constraint firstItem="Yzd-MU-8uL" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="WNh-nG-sec"/>
+                <constraint firstItem="MSy-fP-doe" firstAttribute="height" secondItem="Q5M-cg-NOt" secondAttribute="height" id="WTk-fw-IdS"/>
+                <constraint firstItem="Q5M-cg-NOt" firstAttribute="trailing" secondItem="0If-KQ-LEI" secondAttribute="trailing" id="YqT-nR-Z12"/>
+                <constraint firstItem="MSy-fP-doe" firstAttribute="width" secondItem="Q5M-cg-NOt" secondAttribute="width" id="rZl-rU-ekd"/>
+                <constraint firstItem="MSy-fP-doe" firstAttribute="centerY" secondItem="Q5M-cg-NOt" secondAttribute="centerY" id="sR5-NO-7cR"/>
+                <constraint firstItem="0If-KQ-LEI" firstAttribute="leading" secondItem="Q5M-cg-NOt" secondAttribute="leading" id="wGT-v3-r6t"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="Q5M-cg-NOt"/>
+            <point key="canvasLocation" x="139" y="153"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="zwsj" width="683" height="1214"/>
+    </resources>
+</document>

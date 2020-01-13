@@ -1,0 +1,38 @@
+//
+//  PrefixHeader.pch
+//  HourseManage
+//
+//  Created by mac on 2019/11/4.
+//  Copyright © 2019 jietingzhang. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#define Screen_Width [[UIScreen mainScreen]bounds].size.width
+
+#define Screen_Height [[UIScreen mainScreen]bounds].size.height
+
+#define Screen_Bounds [[UIScreen mainScreen]bounds].size
+
+#define Color_Base(r, g, b)  [UIColor colorWithRed:(r)/255.0f green:(g)/255.0f blue:(b)/255.0f alpha:1]
+
+#define NavigationColor_RGB  [UIColor colorWithRed:45/255.0 green:116/255.0 blue:214/255.0 alpha:1.0];
+//eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJuYW1lIjoiMSIsIm9yZ0lkIjoiOTk5Iiwib3JnTmFtZSI6IuatpuaxieS4h-WQqOWNjuS4reWGt-mTvua4r-aciemZkOWFrOWPuCIsImV4cCI6MTU3NTYxODg4NH0
+//#define Url_Sever @"http://39.104.205.16:10201"
+#define Url_Sever @"http://45.76.193.114:8765"
+
+
+#import "SVProgressHUD.h"
+#import "MJRefresh.h"
+#import "AFNetworking.h"
+#import "PostService.h"
+#import "HomeModel.h"
+#import "WMZDialog.h"
+#import "RZCarPlateNoTextField.h"
+#import "RZCarPlateNoInputAlertView.h"
+
+#import <JXCategoryView.h>
+
+#endif
