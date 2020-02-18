@@ -20,8 +20,8 @@
 
 #define NavigationColor_RGB  [UIColor colorWithRed:45/255.0 green:116/255.0 blue:214/255.0 alpha:1.0];
 //eyJzdWIiOiJhZG1pbiIsInVzZXJJZCI6IjEiLCJuYW1lIjoiMSIsIm9yZ0lkIjoiOTk5Iiwib3JnTmFtZSI6IuatpuaxieS4h-WQqOWNjuS4reWGt-mTvua4r-aciemZkOWFrOWPuCIsImV4cCI6MTU3NTYxODg4NH0
-//#define Url_Sever @"http://39.104.205.16:10201"
-#define Url_Sever @"http://45.76.193.114:8765"
+#define Url_Sever @"http://39.104.205.16:10201"
+//#define Url_Sever @"http://45.76.193.114:8765"
 
 
 #import "SVProgressHUD.h"
