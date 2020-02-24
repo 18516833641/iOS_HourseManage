@@ -115,7 +115,7 @@
     
     switch (_state) {
         case ruku:
-        _nameArr=@[@"入库订单管理",@"入库门禁管理",@"作业信息接受",@"入库质检管理",@"入库信息确认"];
+            _nameArr=@[@"入库订单管理",@"入库门禁管理",@"作业信息接受",@"入库质检管理",@"入库信息确认"];
             _IconArrl=@[@"img_1",@"img_2-1",@"img_3-1",@"img_4",@"img_5"];
             _collectionConstraints.constant = 200;
             _tableviewConstraints.constant = -60;
@@ -1491,7 +1491,7 @@
 }
 
 
--(void)mjRefresh:(NSInteger *)page{
+-(void)mjRefresh:(NSInteger *)status{
     
     __unsafe_unretained UITableView *tableView =self.uitableView;
     __weak typeof(self) weakSelf = self;
