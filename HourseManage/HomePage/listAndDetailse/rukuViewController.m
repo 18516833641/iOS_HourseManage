@@ -192,7 +192,25 @@
 #pragma MARK :暂无数据
 - (IBAction)noDataImageAction:(id)sender {
     
-    
+    switch (_state) {
+        case ruku:
+
+            [self mjRefresh:_WDTStatus];
+
+            break;
+        case kunei:
+
+            [self mjRefresh:_WDTStatus];
+            break;
+        case chuku:
+
+            [self mjRefresh:_WDTStatus];
+
+            break;
+
+        default:
+            break;
+    }
     
 }
 
@@ -730,7 +748,25 @@
 //搜索框搜索button
 - (IBAction)SearchButAction:(id)sender {
     
-    
+    switch (_state) {
+        case ruku:
+
+            [self mjRefresh:_WDTStatus];
+
+            break;
+        case kunei:
+
+            [self mjRefresh:_WDTStatus];
+            break;
+        case chuku:
+
+            [self mjRefresh:_WDTStatus];
+
+            break;
+
+        default:
+            break;
+    }
     
     
 }
@@ -1470,365 +1506,366 @@
     
     switch (_state) {
         case ruku:
-        
+
+            [self mjRefresh:_WDTStatus];
+
             break;
         case kunei:
-            
+
+            [self mjRefresh:_WDTStatus];
             break;
         case chuku:
-            
-            
-            
+
+            [self mjRefresh:_WDTStatus];
+
             break;
-            
+
         default:
             break;
     }
     
     
     
-    
-    
 }
 
 
--(void)mjRefresh:(NSInteger *)status{
-    
+-(void)mjRefresh:(NSString *)index{
+
     __unsafe_unretained UITableView *tableView =self.uitableView;
     __weak typeof(self) weakSelf = self;
     tableView.mj_header= [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        
+
         self->_page = 1 ;
         [self.dataSource removeAllObjects];
-       
-//        switch (weakSelf.state) {
-//                case ruku:
-//                    
-//                switch (self->_reload) {
-//                        case 0://入库订单管理
-//                            _titleView.hidden = YES;
-//                        self->_collectionConstraints.constant = 200;
-//                            _tableviewConstraints.constant = -60;
-//                            _parameters=@{
-//                                          @"page":[NSString stringWithFormat:@"%d",_page],
-//                                          @"limit":@"10",
-//                                          @"orderType":@"0",//出库1 入库0
-//                                          @"orderNo":@"",//搜索
-//                                          @"companyName":@"",//搜索
-//                              };
-//                              _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageList",Url_Sever];
-//                            [self postService:8];
-//                            
-//                            break;
-//                        case 1://入库门禁管理
-//                            _titleView.hidden = YES;
-//                            _collectionConstraints.constant = 200;
-//                            _tableviewConstraints.constant = -60;
-//                            _parameters=@{
-//                                        @"page":[NSString stringWithFormat:@"%d",_page],
-//                                        @"limit":@"10",
-//                                        @"total":@"0",
-//                                        @"orderType":@"0",//出库1 入库0
-//                                        @"deleteFlag":@"0",
-//                                        @"detailId":@"",//搜索
-//                                        @"orderNo":@"",//搜索
-//                                        @"companyName":@"",//搜索
-//                                        };
-//        //                    NSLog(@"入库门禁管理参数:%@",_parameters);
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderMakeappoin/pageList",Url_Sever];
-//                            [self postService:9];
-//                        
-//                        break;
-//                        case 2://作业信息接受
-//                           _collectionConstraints.constant = 200;
-//        //                   _tableviewConstraints.constant = ;
-//                            _titleView.hidden = NO;
-//        //                    _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = 0;
-//                            [_ontButton setTitle:@"已派单" forState:UIControlStateNormal];
-//                            [_twoButton setTitle:@"未完成" forState:UIControlStateNormal];
-//                            [_threeButton setTitle:@"已完成" forState:UIControlStateNormal];
-//                            _parameters=@{
-//                                        @"page":[NSString stringWithFormat:@"%d",_page],
-//                                        @"limit":@"10",
-//                                        @"total":@"0",
-//                                        @"orderType":@"0",//出库1 入库0
-//                                        @"deleteFlag":@"0",
-//                                        @"status":@"0",
-//                                        @"inoutId":@"",//搜索
-//                                        @"driverPlateNo":@"",//搜索
-//                                        @"driverPhone":@"",//搜索
-//                                        };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/pageList",Url_Sever];
-//                            [self postService:10];
-//                        
-//                        break;
-//                        case 3://入库质检管理
-//                            _titleView.hidden = YES;
-//                           _collectionConstraints.constant = 200;
-//                           _tableviewConstraints.constant = -60;
-//                            _parameters=@{
-//                                        @"page":[NSString stringWithFormat:@"%d",_page],
-//                                        @"limit":@"10",
-//                                        @"total":@"0",
-//        //                                @"orderType":@"1",//出库1 入库0
-//        //                                @"orderStatus":@"",
-//        //                                @"confirmWd":@"0",
-//        //                                @"orderNo":@"0",//搜索
-//        //                                @"companyName":@"",//搜索
-//        //                                @"storageMode":@"",//搜索
-//                                        };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsQualityTesting/page",Url_Sever];
-//                            [self postService:11];
-//                        
-//                        break;
-//                        case 4://入库信息确认
-//                            _titleView.hidden = YES;
-//                           _collectionConstraints.constant = 200;
-//                           _tableviewConstraints.constant = -60;
-//                            _parameters=@{
-//                                        @"page":[NSString stringWithFormat:@"%d",_page],
-//                                        @"limit":@"10",
-//                                        @"total":@"0",
-//                                        @"orderType":@"0",//出库1 入库0
-//                                        @"orderStatus":@"4",
-//                                        @"confirmWd":@"0",
-//                                        @"orderNo":@"",//搜索
-//                                        @"companyName":@"",//搜索
-//                                        @"storageMode":@"",//搜索
-//                                        };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageListByConfirm",Url_Sever];
-//                            [self postService:12];
-//                            
-//                        break;
-//                        default:
-//                            break;
-//                    }
-//                    
-//                    
-//                    break;
-//                    
-//                case kunei:
-//                    switch (indexPath.row) {
-//                        case 0://库存管理
-//                            _titleView.hidden = YES;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = -60;
-//                            _threeLabel.hidden = YES;
-//                            _threeTextFiled.hidden = YES;
-//                            _textfiledViewHeight.constant = 220;
-//                            _oneLabel.text = @"货品名称";
-//                            _oneTextField.placeholder = @"请输入货品名称";
-//                            _twoLabel.text = @"货主名称";
-//                            _twoTextField.placeholder = @"请输入货主名称";
-//                            _parameters=@{
-//                                           @"page":[NSString stringWithFormat:@"%d",_page],
-//                                           @"limit":@"10",
-//        //                                   @"orderType":@"1",//出库1 入库0
-//                                           @"orderNo":@"",//搜索
-//                                           @"companyName":@"",//搜索
-//                                               };
-//                           _urlString = [NSString stringWithFormat:@"%@/api/wms/stock/getPageByCondition",Url_Sever];
-//                           [self GETService:4];
-//                            
-//                            
-//                            break;
-//                        case 1://库内管理
-//                                        
-//                            _titleView.hidden = NO;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = 0;
-//                            [_ontButton setTitle:@"库内订单" forState:UIControlStateNormal];
-//                            [_twoButton setTitle:@"库间订单" forState:UIControlStateNormal];
-//                            [_threeButton setTitle:@"库权转移订单订单" forState:UIControlStateNormal];
-//                            _threeLabel.hidden = YES;
-//                            _threeTextFiled.hidden = YES;
-//                            _textfiledViewHeight.constant = 220;
-//                            _oneLabel.text = @"货品名称";
-//                            _oneTextField.placeholder = @"请输入货品名称";
-//                            _twoLabel.text = @"订单编号";
-//                            _twoTextField.placeholder = @"请输入订单编号";
-//                             _parameters=@{
-//                                           @"page":[NSString stringWithFormat:@"%d",_page],
-//                                           @"limit":@"10",
-//                                           @"type":@"0",
-//                                           @"oldStorageNo":@"",//搜索
-//                                           @"shipperName":@"",//搜索
-//                                           @"stockOrderNo":@"",//搜索
-//                                               };
-//                           _urlString = [NSString stringWithFormat:@"%@/api/wms/stockManage/getPageByCondition",Url_Sever];
-//                           [self GETService:5];
-//                        
-//                        break;
-//                        case 2://库存（调度）作业信息列表
-//                            _titleView.hidden = YES;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = -60;
-//                            
-//                            _threeLabel.hidden = YES;
-//                            _threeTextFiled.hidden = YES;
-//                            _oneLabel.hidden = YES;
-//                            _oneTextField.hidden = YES;
-//                            _textfiledViewHeight.constant = 150;
-//                            _twoLabel.text = @"订单编号";
-//                            _twoTextField.placeholder = @"请输入订单编号";
-//                              _parameters=@{
-//                                            @"page":[NSString stringWithFormat:@"%d",_page],
-//                                            @"limit":@"10",
-//                                            @"total":@"0",
-//                                            @"driverPlateNo":@"",//搜索
-//                                            @"driverPhone":@"",//搜索
-//                                            @"orderType":@"",//搜索
-//                                            @"status":@"",//搜索
-//                                            @"inoutId":@"",//搜索
-//                                                };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/getStockTransferPageData",Url_Sever];
-//                            [self GETService:6];
-//                            
-//                        
-//                        break;
-//                        case 3://库内信息确认
-//                            _titleView.hidden = YES;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = -60;
-//                            _threeLabel.hidden = YES;
-//                            _threeTextFiled.hidden = YES;
-//                            _textfiledViewHeight.constant = 220;
-//                            _oneLabel.text = @"货主名称";
-//                            _oneTextField.placeholder = @"请输入货品名称";
-//                            _twoLabel.text = @"订单编号";
-//                            _twoTextField.placeholder = @"请输入订单编号";
-//                              _parameters=@{
-//                                            @"page":[NSString stringWithFormat:@"%d",_page],
-//                                            @"limit":@"10",
-//                                            @"total":@"0",
-//                                            @"driverPlateNo":@"",//搜索
-//                                            @"driverPhone":@"",//搜索
-//                                            @"orderType":@"",//搜索
-//                                            @"status":@"",//搜索
-//                                            @"inoutId":@"",//搜索
-//                                                };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/getStockTransferPageData",Url_Sever];
-//                            [self GETService:7];
-//                        
-//                        break;
-//                            
-//                        default:
-//                            break;
-//                    }
-//                    
-//                
-//                    break;
-//                    
-//                case chuku:
-//                    
-//                    switch (indexPath.row) {
-//                        case 0://出库订单管理列表
-//                            _titleView.hidden = YES;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = -60;
-//                            _threeLabel.hidden = YES;
-//                            _threeTextFiled.hidden = YES;
-//                            _textfiledViewHeight.constant = 220;
-//                            _parameters=@{
-//                                        @"page":[NSString stringWithFormat:@"%d",_page],
-//                                        @"limit":@"10",
-//                                        @"orderType":@"1",//出库1 入库0
-//                                        @"orderNo":@"",//搜索
-//                                        @"companyName":@"",//搜索
-//                            };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageList",Url_Sever];
-//                            [self postService:0];
-//                            break;
-//                        case 1://出库门禁管理
-//                            _titleView.hidden = YES;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = -60;
-//                            _threeLabel.hidden = NO;
-//                            _threeTextFiled.hidden = NO;
-//                            _twoLabel.text = @"商户名称";
-//                            _twoTextField.placeholder = @"请输入商户名称";
-//                            _textfiledViewHeight.constant = 300;
-//                            _parameters=@{
-//                                           @"page":[NSString stringWithFormat:@"%d",_page],
-//                                           @"limit":@"10",
-//                                           @"total":@"0",
-//                                           @"orderType":@"1",//出库1 入库0
-//                                           @"deleteFlag":@"0",
-//                                           @"detailId":@"",//搜索
-//                                           @"orderNo":@"",//搜索
-//                                           @"companyName":@"",//搜索
-//                                        };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderMakeappoin/pageList",Url_Sever];
-//                            [self postService:1];
-//                            
-//                            
-//                        break;
-//                        case 2://出库作业信息接受
-//                            _titleView.hidden = NO;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = 0;
-//                            [_ontButton setTitle:@"已派单" forState:UIControlStateNormal];
-//                            [_twoButton setTitle:@"未完成" forState:UIControlStateNormal];
-//                            [_threeButton setTitle:@"已完成" forState:UIControlStateNormal];
-//                            _threeLabel.hidden = NO;
-//                            _threeTextFiled.hidden = NO;
-//                            _twoLabel.text = @"司机电话";
-//                            _twoTextField.placeholder = @"请输入司机电话";
-//                            _textfiledViewHeight.constant = 300;
-//                            _parameters=@{
-//                                        @"page":[NSString stringWithFormat:@"%d",_page],
-//                                        @"limit":@"10",
-//                                        @"total":@"0",
-//                                        @"orderType":@"1",//出库1 入库0
-//                                        @"deleteFlag":@"0",
-//                                        @"status":@"0",
-//                                        @"inoutId":@"",//搜索
-//                                        @"driverPlateNo":@"",//搜索
-//                                        @"driverPhone":@"",//搜索
-//                                        };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/pageList",Url_Sever];
-//                            [self postService:2];
-//                        
-//                        break;
-//                        case 3://出库信息确认
-//                            _titleView.hidden = YES;
-//                            _collectionConstraints.constant = 100;
-//                            _tableviewConstraints.constant = -60;
-//                            _threeLabel.hidden = YES;
-//                            _threeTextFiled.hidden = YES;
-//                            _textfiledViewHeight.constant = 220;
-//                            _parameters=@{
-//                                        @"page":[NSString stringWithFormat:@"%d",_page],
-//                                        @"limit":@"10",
-//        //                                @"total":@"0",
-//                                        @"orderType":@"1",//出库1 入库0
-//        //                                @"orderStatus":@"",
-//        //                                @"confirmWd":@"0",
-//                                        @"orderNo":@"0",//搜索
-//                                        @"companyName":@"",//搜索
-//        //                                @"storageMode":@"",//搜索
-//                                        };
-//                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageList",Url_Sever];
-//                            [self postService:3];
-//                        
-//                        break;
-//                        default:
-//                            break;
-//                    }
-//                
-//                    break;
-//                    
-//                default:
-//                    break;
-//            }
-        
-        
+
+        switch (weakSelf.state) {
+                case ruku:
+
+                switch ([index intValue]) {
+                        case 0://入库订单管理
+                            _titleView.hidden = YES;
+                        self->_collectionConstraints.constant = 200;
+                            _tableviewConstraints.constant = -60;
+                            _parameters=@{
+                                          @"page":[NSString stringWithFormat:@"%d",_page],
+                                          @"limit":@"10",
+                                          @"orderType":@"0",//出库1 入库0
+                                          @"orderNo":@"",//搜索
+                                          @"companyName":@"",//搜索
+                              };
+                              _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageList",Url_Sever];
+                            [self postService:8];
+
+                            break;
+                        case 1://入库门禁管理
+                            _titleView.hidden = YES;
+                            _collectionConstraints.constant = 200;
+                            _tableviewConstraints.constant = -60;
+                            _parameters=@{
+                                        @"page":[NSString stringWithFormat:@"%d",_page],
+                                        @"limit":@"10",
+                                        @"total":@"0",
+                                        @"orderType":@"0",//出库1 入库0
+                                        @"deleteFlag":@"0",
+                                        @"detailId":@"",//搜索
+                                        @"orderNo":@"",//搜索
+                                        @"companyName":@"",//搜索
+                                        };
+        //                    NSLog(@"入库门禁管理参数:%@",_parameters);
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderMakeappoin/pageList",Url_Sever];
+                            [self postService:9];
+
+                        break;
+                        case 2://作业信息接受
+                           _collectionConstraints.constant = 200;
+        //                   _tableviewConstraints.constant = ;
+                            _titleView.hidden = NO;
+        //                    _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = 0;
+                            [_ontButton setTitle:@"已派单" forState:UIControlStateNormal];
+                            [_twoButton setTitle:@"未完成" forState:UIControlStateNormal];
+                            [_threeButton setTitle:@"已完成" forState:UIControlStateNormal];
+                            _parameters=@{
+                                        @"page":[NSString stringWithFormat:@"%d",_page],
+                                        @"limit":@"10",
+                                        @"total":@"0",
+                                        @"orderType":@"0",//出库1 入库0
+                                        @"deleteFlag":@"0",
+                                        @"status":@"0",
+                                        @"inoutId":@"",//搜索
+                                        @"driverPlateNo":@"",//搜索
+                                        @"driverPhone":@"",//搜索
+                                        };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/pageList",Url_Sever];
+                            [self postService:10];
+
+                        break;
+                        case 3://入库质检管理
+                            _titleView.hidden = YES;
+                           _collectionConstraints.constant = 200;
+                           _tableviewConstraints.constant = -60;
+                            _parameters=@{
+                                        @"page":[NSString stringWithFormat:@"%d",_page],
+                                        @"limit":@"10",
+                                        @"total":@"0",
+        //                                @"orderType":@"1",//出库1 入库0
+        //                                @"orderStatus":@"",
+        //                                @"confirmWd":@"0",
+        //                                @"orderNo":@"0",//搜索
+        //                                @"companyName":@"",//搜索
+        //                                @"storageMode":@"",//搜索
+                                        };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsQualityTesting/page",Url_Sever];
+                            [self postService:11];
+
+                        break;
+                        case 4://入库信息确认
+                            _titleView.hidden = YES;
+                           _collectionConstraints.constant = 200;
+                           _tableviewConstraints.constant = -60;
+                            _parameters=@{
+                                        @"page":[NSString stringWithFormat:@"%d",_page],
+                                        @"limit":@"10",
+                                        @"total":@"0",
+                                        @"orderType":@"0",//出库1 入库0
+                                        @"orderStatus":@"4",
+                                        @"confirmWd":@"0",
+                                        @"orderNo":@"",//搜索
+                                        @"companyName":@"",//搜索
+                                        @"storageMode":@"",//搜索
+                                        };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageListByConfirm",Url_Sever];
+                            [self postService:12];
+
+                        break;
+                        default:
+                            break;
+                    }
+
+
+                    break;
+
+                case kunei:
+                    switch ([index intValue]) {
+                        case 0://库存管理
+                            _titleView.hidden = YES;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = -60;
+                            _threeLabel.hidden = YES;
+                            _threeTextFiled.hidden = YES;
+                            _textfiledViewHeight.constant = 220;
+                            _oneLabel.text = @"货品名称";
+                            _oneTextField.placeholder = @"请输入货品名称";
+                            _twoLabel.text = @"货主名称";
+                            _twoTextField.placeholder = @"请输入货主名称";
+                            _parameters=@{
+                                           @"page":[NSString stringWithFormat:@"%d",_page],
+                                           @"limit":@"10",
+        //                                   @"orderType":@"1",//出库1 入库0
+                                           @"orderNo":@"",//搜索
+                                           @"companyName":@"",//搜索
+                                               };
+                           _urlString = [NSString stringWithFormat:@"%@/api/wms/stock/getPageByCondition",Url_Sever];
+                           [self GETService:4];
+
+
+                            break;
+                        case 1://库内管理
+
+                            _titleView.hidden = NO;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = 0;
+                            [_ontButton setTitle:@"库内订单" forState:UIControlStateNormal];
+                            [_twoButton setTitle:@"库间订单" forState:UIControlStateNormal];
+                            [_threeButton setTitle:@"库权转移订单订单" forState:UIControlStateNormal];
+                            _threeLabel.hidden = YES;
+                            _threeTextFiled.hidden = YES;
+                            _textfiledViewHeight.constant = 220;
+                            _oneLabel.text = @"货品名称";
+                            _oneTextField.placeholder = @"请输入货品名称";
+                            _twoLabel.text = @"订单编号";
+                            _twoTextField.placeholder = @"请输入订单编号";
+                             _parameters=@{
+                                           @"page":[NSString stringWithFormat:@"%d",_page],
+                                           @"limit":@"10",
+                                           @"type":@"0",
+                                           @"oldStorageNo":@"",//搜索
+                                           @"shipperName":@"",//搜索
+                                           @"stockOrderNo":@"",//搜索
+                                               };
+                           _urlString = [NSString stringWithFormat:@"%@/api/wms/stockManage/getPageByCondition",Url_Sever];
+                           [self GETService:5];
+
+                        break;
+                        case 2://库存（调度）作业信息列表
+                            _titleView.hidden = YES;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = -60;
+
+                            _threeLabel.hidden = YES;
+                            _threeTextFiled.hidden = YES;
+                            _oneLabel.hidden = YES;
+                            _oneTextField.hidden = YES;
+                            _textfiledViewHeight.constant = 150;
+                            _twoLabel.text = @"订单编号";
+                            _twoTextField.placeholder = @"请输入订单编号";
+                              _parameters=@{
+                                            @"page":[NSString stringWithFormat:@"%d",_page],
+                                            @"limit":@"10",
+                                            @"total":@"0",
+                                            @"driverPlateNo":@"",//搜索
+                                            @"driverPhone":@"",//搜索
+                                            @"orderType":@"",//搜索
+                                            @"status":@"",//搜索
+                                            @"inoutId":@"",//搜索
+                                                };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/getStockTransferPageData",Url_Sever];
+                            [self GETService:6];
+
+
+                        break;
+                        case 3://库内信息确认
+                            _titleView.hidden = YES;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = -60;
+                            _threeLabel.hidden = YES;
+                            _threeTextFiled.hidden = YES;
+                            _textfiledViewHeight.constant = 220;
+                            _oneLabel.text = @"货主名称";
+                            _oneTextField.placeholder = @"请输入货品名称";
+                            _twoLabel.text = @"订单编号";
+                            _twoTextField.placeholder = @"请输入订单编号";
+                              _parameters=@{
+                                            @"page":[NSString stringWithFormat:@"%d",_page],
+                                            @"limit":@"10",
+                                            @"total":@"0",
+                                            @"driverPlateNo":@"",//搜索
+                                            @"driverPhone":@"",//搜索
+                                            @"orderType":@"",//搜索
+                                            @"status":@"",//搜索
+                                            @"inoutId":@"",//搜索
+                                                };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/getStockTransferPageData",Url_Sever];
+                            [self GETService:7];
+
+                        break;
+
+                        default:
+                            break;
+                    }
+
+
+                    break;
+
+                case chuku:
+
+                    switch ([index intValue]) {
+                        case 0://出库订单管理列表
+                            _titleView.hidden = YES;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = -60;
+                            _threeLabel.hidden = YES;
+                            _threeTextFiled.hidden = YES;
+                            _textfiledViewHeight.constant = 220;
+                            _parameters=@{
+                                        @"page":[NSString stringWithFormat:@"%d",_page],
+                                        @"limit":@"10",
+                                        @"orderType":@"1",//出库1 入库0
+                                        @"orderNo":@"",//搜索
+                                        @"companyName":@"",//搜索
+                            };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageList",Url_Sever];
+                            [self postService:0];
+                            break;
+                        case 1://出库门禁管理
+                            _titleView.hidden = YES;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = -60;
+                            _threeLabel.hidden = NO;
+                            _threeTextFiled.hidden = NO;
+                            _twoLabel.text = @"商户名称";
+                            _twoTextField.placeholder = @"请输入商户名称";
+                            _textfiledViewHeight.constant = 300;
+                            _parameters=@{
+                                           @"page":[NSString stringWithFormat:@"%d",_page],
+                                           @"limit":@"10",
+                                           @"total":@"0",
+                                           @"orderType":@"1",//出库1 入库0
+                                           @"deleteFlag":@"0",
+                                           @"detailId":@"",//搜索
+                                           @"orderNo":@"",//搜索
+                                           @"companyName":@"",//搜索
+                                        };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderMakeappoin/pageList",Url_Sever];
+                            [self postService:1];
+
+
+                        break;
+                        case 2://出库作业信息接受
+                            _titleView.hidden = NO;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = 0;
+                            [_ontButton setTitle:@"已派单" forState:UIControlStateNormal];
+                            [_twoButton setTitle:@"未完成" forState:UIControlStateNormal];
+                            [_threeButton setTitle:@"已完成" forState:UIControlStateNormal];
+                            _threeLabel.hidden = NO;
+                            _threeTextFiled.hidden = NO;
+                            _twoLabel.text = @"司机电话";
+                            _twoTextField.placeholder = @"请输入司机电话";
+                            _textfiledViewHeight.constant = 300;
+                            _parameters=@{
+                                        @"page":[NSString stringWithFormat:@"%d",_page],
+                                        @"limit":@"10",
+                                        @"total":@"0",
+                                        @"orderType":@"1",//出库1 入库0
+                                        @"deleteFlag":@"0",
+                                        @"status":@"0",
+                                        @"inoutId":@"",//搜索
+                                        @"driverPlateNo":@"",//搜索
+                                        @"driverPhone":@"",//搜索
+                                        };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsDispatchLeafets/pageList",Url_Sever];
+                            [self postService:2];
+
+                        break;
+                        case 3://出库信息确认
+                            _titleView.hidden = YES;
+                            _collectionConstraints.constant = 100;
+                            _tableviewConstraints.constant = -60;
+                            _threeLabel.hidden = YES;
+                            _threeTextFiled.hidden = YES;
+                            _textfiledViewHeight.constant = 220;
+                            _parameters=@{
+                                        @"page":[NSString stringWithFormat:@"%d",_page],
+                                        @"limit":@"10",
+        //                                @"total":@"0",
+                                        @"orderType":@"1",//出库1 入库0
+        //                                @"orderStatus":@"",
+        //                                @"confirmWd":@"0",
+                                        @"orderNo":@"0",//搜索
+                                        @"companyName":@"",//搜索
+        //                                @"storageMode":@"",//搜索
+                                        };
+                            _urlString = [NSString stringWithFormat:@"%@/api/wms/wmsOrderInout/pageList",Url_Sever];
+                            [self postService:3];
+
+                        break;
+                        default:
+                            break;
+                    }
+
+                    break;
+
+                default:
+                    break;
+            }
+
+
         // 结束刷新
         [tableView.mj_header endRefreshing];
-        
+
     }];
-    
+
 }
 
 
